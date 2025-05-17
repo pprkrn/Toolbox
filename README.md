@@ -1,4 +1,4 @@
-# 🧰 toolbox – kleine python-tools für große alltags-effekte
+# toolbox – kleine python-tools für große alltags-effekte
 
 ```
   _______          _              
