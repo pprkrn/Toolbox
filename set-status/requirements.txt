@@ -1,0 +1,5 @@
+googlesearch-python
+requests
+python-dotenv
+customtkinter
+py2app
