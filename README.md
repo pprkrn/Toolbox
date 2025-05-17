@@ -28,7 +28,7 @@ kopiert alle dateien aus unterordnern flach in einen ordner – ideal für mail 
 1. python 3 installieren
 2. repository klonen:
    ```bash
-   git clone https://github.com/dein-nutzername/toolbox.git
+   git clone https://github.com/pprkrn/toolbox.git
    cd toolbox
    ```
 3. virtuelle umgebung & dependencies:
