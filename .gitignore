@@ -43,7 +43,6 @@ coverage.xml
 .DS_Store
 
 # Icon / assets
-*.png
 *.ico
 
 # VSCode project settings
