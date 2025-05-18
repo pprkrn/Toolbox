@@ -1,69 +1,98 @@
-# toolbox – kleine python-tools für große alltags-effekte
 
-```
-  _______          _              
- |__   __|        | | 
-    | | ___   ___ | |          
-    | |/ _ \ / _ \| |        
-    | | (_) | (_) | |    
-    |_|\___/ \___/|_|           
-     kleine tools. große wirkung.     
-```
+#toolbox – kleine python-tools für große alltags-effekte 
 
-**toolbox** ist eine sammlung praktischer, leicht verständlicher python-tools für technikaffine alltagsnutzer:innen. jedes skript automatisiert kleine, aber nervige alltagsaufgaben – ideal fürs homeoffice, studium oder die persönliche digitalroutine.
+![toolbox banner](toolbox_logo.png)
 
-## 🔧 enthaltene tools
+
+**toolbox** ist eine kuratierte sammlung smarter python-skripte, die dir helfen, wiederkehrende digitalaufgaben im alltag effizient zu automatisieren – vom homeoffice über studium bis hin zu side-projects. jedes tool ist sofort einsatzbereit und leicht anpassbar.
+
+## enthaltene tools
 
 ### 🔹 slack status setter
 eine gui-app zur schnellen statusänderung in slack – mit eigenen presets erweiterbar.
 
-### 🔹 quicksearch
-ein tool für blitzschnelle google-recherchen, speichert ergebnisse direkt als `.csv`.
+### 🔹 quicksearch  
+startet eine google-suche mit eigenem suchbegriff. die anzahl der maximalen suchergebnisse wird vorher festgelegt. die links der treffer werden automatisch als `.csv` gespeichert – perfekt für schnelle recherchen.
 
 ### 🔹 copy files flat
 kopiert alle dateien aus unterordnern flach in einen ordner – ideal für mail merge & versand.
 
-## 🖥️ installation
+## installation
 
-1. python 3 installieren
-2. repository klonen:
+1. miniconda installieren  
+   lade miniconda für dein betriebssystem herunter und installiere es:  
+   https://docs.conda.io/en/latest/miniconda.html
+
+2. neue umgebung anlegen (python 3.10):
+   ```bash
+   conda create -n toolbox python=3.10
+   conda activate toolbox
+   ```
+
+3. repository klonen:
    ```bash
    git clone https://github.com/pprkrn/toolbox.git
    cd toolbox
    ```
-3. virtuelle umgebung & dependencies:
+
+4. abhängigkeiten installieren  
+   die tools `slack status setter` und `quicksearch` liegen in eigenen unterordnern mit jeweils einer `requirements.txt`.  
+   wechsle z. b. in den ordner `quicksearch` und installiere:
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate
+   cd quicksearch
    pip install -r requirements.txt
    ```
+   das tool `copy files flat` verwendet ausschließlich systembibliotheken und benötigt keine zusätzlichen pakete.
 
-## 🚀 verwendung
+## verwendung
 
-starte das gewünschte tool mit:
+wechsle zunächst in das verzeichnis des gewünschten tools, z. b.:
 ```bash
-python set-status.py        # für slack status
-python quicksearch.py       # für google-suche
-python copy_files_flat.py   # für datei-kopierer
+cd slack-status-setter
 ```
 
-## 📦 anpassung
+### slack status setter starten
+stelle sicher, dass eine `.env`-datei mit deinem slack-token vorhanden ist:
+```env
+SLACK_TOKEN=xoxp-dein-token-hier
+```
+dann starten mit:
+```bash
+python set-status.py
+```
+
+### quicksearch starten
+```bash
+cd quicksearch
+python quicksearch.py
+```
+
+### copy files flat starten
+dieses tool liegt im hauptverzeichnis:
+```bash
+python copy_files_flat.py
+```
+
+## anpassung
 
 alle tools lassen sich leicht im code anpassen – insbesondere:
-- statusmeldungen in `set-status.py`
-- suchparameter in `quicksearch.py`
-- quell- und zielpfade in `copy_files_flat.py`
+  - statusmeldungen in `set-status.py`
+  - quell- und zielpfade in `copy_files_flat.py`
 
-## 🧪 systemvoraussetzungen
+## systemvoraussetzungen
 
-- python 3.9+
-- macos, windows oder linux
-- kein root-zugriff erforderlich
+- getestet mit python **3.10**  
+  andere versionen ab 3.9 können funktionieren, wurden aber nicht getestet.
+- erfolgreich getestet unter **macos**  
+  nutzung unter **windows** oder **linux** bislang nicht geprüft.
+- kein root-zugriff unter macos erforderlich  
+  unter **windows** können je nach sicherheitseinstellung **adminrechte** für die installation von python oder paketen erforderlich sein.
 
-## 📃 lizenz
+## lizenz
 
 dieses projekt steht unter der MIT license – siehe [LICENSE](./LICENSE).
 
 ---
 
-🛠️ entwickelt mit liebe & neugier von [henrik peperkorn](https://pprkrn.com)
+📡 weitere infos, screenshots und neue tools findest du demnächst unter [pprkrn.com](https://pprkrn.com)  
+(die seite ist aktuell noch im aufbau – vorbeischauen lohnt sich bald).
